@@ -1,7 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const useStateComp = () => {
+const HooksComp = () => {
   const [count, setcount] = useState(0);
+
+  useEffect(() => {
+    console.log("The count is:", count);
+
+    return () => {
+      console.log("Im being cleaned up");
+    };
+  }, [count]);
+
   return (
     <div>
       <div>Count: {count}</div>
@@ -11,4 +20,4 @@ const useStateComp = () => {
   );
 };
 
-export default useStateComp;
+export default HooksComp;
