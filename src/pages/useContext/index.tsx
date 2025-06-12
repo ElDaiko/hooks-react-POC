@@ -12,7 +12,7 @@ export interface User {
 
 interface DemoProps {}
 
-export default function Demo({}: DemoProps) {
+export default function UseContext({}: DemoProps) {
   const [user] = useState<User>({
     isAllowed: true,
     name: "You",
